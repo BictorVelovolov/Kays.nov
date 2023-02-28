@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "sortic.h"
+#include "check_sortic.h"
 #include <string>
 
 using namespace std;
