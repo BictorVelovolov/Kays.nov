@@ -9,4 +9,6 @@ void p (vector <int> &mass, vector <int> &mass1);
 void rr(vector <int> &mass);
 void r(vector <int> &mass);
 
+int cifrovizacia (string str);
+
 #endif
