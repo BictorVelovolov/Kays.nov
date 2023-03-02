@@ -8,49 +8,49 @@ using namespace std;
 
 int main()
 {
-    int n, zn, mini, kon;
+    int n, zn, maxi, kon;
     ofstream file;
-    string fin;
-    cout << "kol-vo elementov v 1-om: ";
-    cin >> n;
+    string fin, znak;
+    cin >> znak;
     kon = 0;
-    mini =  2147483647;
-    vector <int> a (n, 0);
+    vector <int> a;
+    vector <int> a1;
     vector <int> b;
     file.open("aboba.txt");
-    for (int i = 0; i < n; i++){
-        cin >> zn;
-        a[i] = zn;
+    for(int i = 0; znak != "!"; i++){
+        a.push_back(cifrovizacia(znak));
+        cin >> znak;
     }
     while (kon < a.size()){
             kon = 0;
-           mini =  2147483647;
+           maxi =  -2147483648;
         for (int i = 0; i < a.size(); i++){
-        if (a[i] <= mini)
-            mini = a[i];
+        if (a[i] >= maxi)
+            maxi = a[i];
     }
-    while (a[0] != mini){
-            //if(a[1] != mini){
+    while (a[0] != maxi){
                r(a);
                 file << "ra" << endl;
-            //}
-            //else{
-            //    s(a);
-           // file << "sa" << endl;
-          //  }
+                cout << "ra" << endl;
         }
         p(b, a);
         file << "pb" << endl;
-        a[0] = 2147483647;
+        cout << "pb" << endl;
         for (int l = 0; l < a.size(); l++)
-            if (a[l] == 2147483647){
+            if (a[l] == -2147483648)
                 kon++;
-            }
-
-
     }
+    for (int i = 0; i < b.size(); i++){
+        rr(b);
+        file << "rrb" << endl;
+        cout << "rrb" << endl;
+        p(a, b);
+        file << "pa" << endl;
+        cout << "pa" << endl;
+    }
+    //s(a);
+    for (int i = 0; i < a.size(); i++)
+        cout << a[i] << " ";
     file.close();
-    /*for (int i = 0; i < b.size(); i++)
-        cout << b[i] << " ";*/
     return 0;
 }
