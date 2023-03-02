@@ -41,7 +41,26 @@ void p (vector <int> &mass, vector <int> &mass1)
 {
     if (mass1.size() > 0)
     {
-        mass.push_back(mass1[0]);
+        if (mass.size() == 0 || mass1[0] != -2147483648){
+             mass.push_back(mass1[0]);
+        mass1[0] = -2147483648;
         r(mass);
+        }
+       else
+        for (int i = 0; i < mass1.size(); i++){
+            mass[0] = mass1[0];
+        rr(mass);
+        }
     }
+}
+
+
+int cifrovizacia (string str){
+    int ch;
+    char sym;
+    for (int i = 1; i < str.size(); i += 2){
+        sym = str[i];
+        ch = ch * 10 + (sym - '0');
+    }
+    return ch;
 }
