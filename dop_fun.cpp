@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 int cifrovizacia (string str){
     int ch;
     char sym;
@@ -13,13 +14,14 @@ int cifrovizacia (string str){
     }
     return ch;
 }
-int maksimum (vector <int> mass){
-    int maxi;
+int minimum (vector <int> mass){
+    int mini;
+    mini = 2147483647;
     for (int i = 0; i < mass.size(); i++){
-        if (mass[i] >= maxi)
-            maxi = mass[i];
+        if (mass[i] <= mini)
+            mini = mass[i];
     }
-    return maxi;
+    return mini;
 }
 
 void zamen (const vector <int> &cop, vector <int> &osn){
