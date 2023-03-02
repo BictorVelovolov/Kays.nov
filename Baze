@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    int n, zn, maxi, kon;
+    int n, zn, mini, kon;
     ofstream file;
     string fin, znak;
     cin >> znak;
@@ -23,8 +23,8 @@ int main()
     }
     while (kon < a.size()){
             kon = 0;
-           maxi = maksimum(a);
-    while (a[0] != maxi){
+           mini = minimum(a);
+    while (a[0] != mini){
                r(a);
                 file << "ra" << endl;
                 cout << "ra" << endl;
@@ -33,7 +33,7 @@ int main()
         file << "pb" << endl;
         cout << "pb" << endl;
         for (int l = 0; l < a.size(); l++)
-            if (a[l] == -2147483648)
+            if (a[l] == 2147483647)
                 kon++;
     }
     for (int i = 0; i < b.size(); i++){
