@@ -42,7 +42,7 @@ void p (vector <int> &mass, vector <int> &mass1) //из mass1 в mass
     if (mass1.size() > 0)
     {
         mass.push_back(mass1[0]);
-        mass1[0] = -2147483648;
+        mass1[0] = 2147483647;
         rr(mass);
     }
 }
