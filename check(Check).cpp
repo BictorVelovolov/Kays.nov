@@ -13,7 +13,7 @@ void s (vector <int> &mass){
     mass[0] = v2;
     }
 }
-void rr(vector <int> &mass){//сдвиг вниз
+void rr(vector <int> &mass){//Г±Г¤ГўГЁГЈ ГўГ­ГЁГ§
     int i, cif;
     if (mass.size() > 0)
     {
@@ -33,7 +33,7 @@ void p(vector <int> &mass, vector <int> &mass1)
      }
 }
 
-void r(vector <int> &mass){//сдвиг вверх
+void r(vector <int> &mass){//Г±Г¤ГўГЁГЈ ГўГўГҐГ°Гµ
     int i, cif;
     if (mass.size() > 0)
     {
