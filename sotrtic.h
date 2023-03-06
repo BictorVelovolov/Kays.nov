@@ -10,7 +10,7 @@ void rr(vector <int> &mass);
 void r(vector <int> &mass);
 
 int cifrovizacia (string str);
-int minimum (vector <int> mass);
+int maximum (vector <int> mass);
 void zamen (const vector <int> &cop, vector <int> &osn);
 
 #endif
