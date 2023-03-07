@@ -3,15 +3,18 @@
 #include "check_sortic.h"
 #include <string>
 #include <fstream>
+#include <windows.h>
 using namespace std;
 
 int main()
 {
+    HANDLE hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     vector <int> a1;
     ifstream file;
     file.open("aboba.txt");
-    string str;
-    int k, i;
+    string str, res;
+    int k;
     vector <int> a;
     vector <int> b;
     string znak;
@@ -20,11 +23,12 @@ int main()
         a.push_back(cifrovizacia(znak));
         cin >> znak;
     }
-    while(str != "con")
+    while(str != "*")
         {
-            file >> str;
-            if (str != "con")
-                cout << str << endl;
+            cin >> str;
+            /*file >> str;
+            if (str != "*")
+                cout << str << endl;*/
             if (str == "sa")
                 s(a);
             if (str == "sb")
@@ -54,13 +58,28 @@ int main()
                 rr(a);
                 rr(b);
             }
-
         }
+        if (a.size() == 0){
+            SetConsoleTextAttribute(hConsole, 12);
+            cout << "KO";
+        }
+        else
+        {
+            if (a1.size() == 0 && a.size() != 0)
+            for(int l = 0; l < a.size(); l++)
+                a1.push_back(a[l]);
     if(rab(a1))
-        cout << "OK" << endl;
+        res = "OK";
     else
-        cout << "KO" << endl;
-
-    for (i = 0; i < a1.size(); i++)
-        cout << a1[i] << " ";
+        res = "KO";
+    if (res == "OK")
+        SetConsoleTextAttribute(hConsole, 10);
+    else
+        SetConsoleTextAttribute(hConsole, 12);
+    cout << res << endl;
+        }
+        SetConsoleTextAttribute(hConsole, 15);
+    /*for (int i = 0; i < a1.size(); i++)
+        cout << a1[i] << " ";*/
+        return 0;
 }
