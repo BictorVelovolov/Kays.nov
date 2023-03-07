@@ -46,8 +46,8 @@ void r(vector <int> &mass){//ñäâèã ââåðõ
 }
 
  bool rab(vector <int> mass){
-     for(int i = 0; i < mass.size();i++){
-    if(mass[i] < mass[i+1])
+     for(int i = 0; i < mass.size()-1;i++){
+    if(mass[i] > mass[i+1])
         return false;
     }
     return true;
@@ -62,14 +62,14 @@ int cifrovizacia (string str){
     }
     return ch;
 }
-int minimum (vector <int> mass){
-    int mini;
-    mini = 2147483647;
+int maximum (vector <int> mass){
+    int maxi;
+    maxi = -2147483648;
     for (int i = 0; i < mass.size(); i++){
-        if (mass[i] <= mini)
-            mini = mass[i];
+        if (mass[i] >= maxi)
+            maxi = mass[i];
     }
-    return mini;
+    return maxi;
 }
 
 void zamen (const vector <int> &cop, vector <int> &osn){
